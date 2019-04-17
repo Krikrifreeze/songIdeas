@@ -1,4 +1,5 @@
 class Chord:
-    def __init__(self):
-        self.number = 1
-        self.type = "maj"
+    def __init__(self, num, t, octa):
+        self.number = num
+        self.type = t
+        self.octave = octa
