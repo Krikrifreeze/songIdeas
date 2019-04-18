@@ -1,15 +1,20 @@
 import Chord, random
 
-
-tonic = "c"
-
-def generate(): #generates 4 chords
+def generate(n): #generates n chords in scale
     chords = []
-    #for i in range(3):
-        #chords[i] = Chord(1,'maj')
+    octave = 5
+    for i in range(n):
+        randomChordNum = random.randint(1,7) #generates chord number
+        randomChordType = random.randint(0,1) #TODO: incorporate chord qualities
+        chords.append(Chord.Chord(randomChordNum,randomChordType,octave))
+    return chords
 
 def main():
-    print("Defaulting to the key \"cmaj\"")
-    
+    try:
+        n = int(input("How many chords? (default 4): "))
+    except ValueError:
+        n = 4
+    print("chord numbers for your song: " + str(generate(n)))
+    print("key: c major")
 
 main()
