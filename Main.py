@@ -9,12 +9,24 @@ def generate(n): #generates n chords in scale
         chords.append(Chord.Chord(randomChordNum,randomChordType,octave))
     return chords
 
+def getKey(n):
+    keys = open("keys", "r")
+    for i in range(n):
+        key = keys.readline()
+        #print(key)
+    key = keys.readline()
+    print(key)
+    keys.close()
+    return key
+
 def main():
+    key = getKey(random.randint(0,11))
+    
     try:
         n = int(input("How many chords? (default 4): "))
     except ValueError:
         n = 4
     print("chord numbers for your song: " + str(generate(n)))
-    print("key: c major")
+    print("key: " + str(key))
 
 main()
