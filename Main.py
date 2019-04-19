@@ -9,18 +9,18 @@ def generate(n): #generates n chords in scale
         chords.append(Chord.Chord(randomChordNum,randomChordType,octave))
     return chords
 
-def getKey(n): #returns a string from the keys file based on n. (ex. n = 0 returns C, n = 11 returns B)
-    keys = open("keys", "r")
+def readFile(filename, n): #returns a string based on the line number of a file
+    file = open(filename, "r")
     for _i in range(n):
-        key = keys.readline()
+        line = file.readline()
         #print(key)
-    key = keys.readline()
-    print(key)
-    keys.close()
-    return key
+    line = file.readline()
+    print(line)
+    file.close()
+    return line
 
 def main():
-    key = getKey(random.randint(0,11))
+    key = readFile("keys", random.randint(0,11))
     
     try:
         n = int(input("How many chords? (default 4): "))

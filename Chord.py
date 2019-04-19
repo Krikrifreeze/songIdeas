@@ -4,4 +4,4 @@ class Chord:
         self.quality = q #maj, min, aug, dim, maj7, 
         self.octave = octa
     def __repr__(self):
-        return str(self.number)
+        return (str(self.number) + str(self.quality))
