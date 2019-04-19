@@ -14,13 +14,12 @@ def readFile(filename, n): #returns a string based on the line number of a file
         line = file.readline()
         #print(key)
     line = file.readline()
-    print(line)
     file.close()
-    return line
+    return line.rstrip()
 
 def main():
-    key = readFile("keys", random.randint(0,11))
-    
+    key = readFile("tonic", random.randint(0,11)) + " " + readFile("qualities", random.randint(0,1))
+
     try:
         n = int(input("How many chords? (default 4): "))
     except ValueError:
