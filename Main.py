@@ -5,8 +5,7 @@ def generate(n): #generates n chords in scale
     octave = 5
     for _i in range(n):
         randomChordNum = random.randint(1,7) #generates chord number
-        randomChordType = random.randint(0,1) #TODO: incorporate chord qualities
-        chords.append(Chord.Chord(randomChordNum,randomChordType,octave))
+        chords.append(Chord.Chord(randomChordNum))
     return chords
 
 def readFile(filename, n): #returns a string based on the line number of a file
