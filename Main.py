@@ -27,4 +27,5 @@ def main():
     print("chord numbers for your song: " + str(generate(n)))
     print("key: " + str(key))
 
-main()
+while True:
+    main()
